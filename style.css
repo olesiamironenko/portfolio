@@ -12,7 +12,7 @@
   gap: 2rem;
 }
 
-.hero-text {
+.home__text {
   flex: 1;
   min-width: 280px;
 }
