@@ -4,68 +4,110 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Olesia Mironenko | Portfolio</title>
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
-      <h1>Olesia Mironenko</h1>
-      <p>Data enthusiast & aspiring developer</p>
+      <!-- navigation bar -->
+      <nav class="nav container">
+        <a href="#" class="nav__logo">Olesia Mironenko</a>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list grid">
+            <li class="nav__item">
+              <a href="#home" class="nav__link">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="#about" class="nav__link">About</a>
+            </li>
+            <li class="nav__item">
+              <a href="#skills" class="nav__link">Skills</a>
+            </li>
+            <li class="nav__item">
+              <a href="#portfolio" class="nav__link">Portfolio</a>
+            </li>
+            <li class="nav__item">
+              <a href="#services" class="nav__link">>Services</a>
+            </li>
+            <li class="nav__item">
+              <a href="#contact" class="nav__link">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </header>
 
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        I’m passionate about data and how we can use it to drive decisions. I
-        began coding through the Code the Dream program, and I love working on
-        real-world projects.
-      </p>
-    </section>
+    <main class="main">
+      <!-- home -->
+      <section id="home">
+        <!-- hero section -->
+        <div class="home__data">
+          <h1 class="home__title">Hi, I'am Olesia</h1>
+          <h3 class="home__subtitle">Data enthusiast & aspiring developer</h3>
+          <p class="home__description">
+            I’m passionate about data and how it can be used to make informed
+            decisions. I began coding through the Code the Dream program, and I
+            love working on real-world projects.
+          </p>
+        </div>
+      </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="project">
-        <h3>Baseball Stats Explorer</h3>
-        <p>
-          An interactive dashboard to explore MLB statistics from 2021–2024
-          using Python, SQL, and Streamlit.
-        </p>
-        <p>
-          <a href="https://github.com/yourusername/baseball-stats"
-            >GitHub Repo</a
-          >
-        </p>
-      </div>
-      <div class="project">
-        <h3>Name Matcher</h3>
-        <p>
-          A fuzzy-matching tool to identify rare name spellings in datasets.
-          Built with pandas and fuzzywuzzy.
-        </p>
-        <p>
-          <a href="https://github.com/yourusername/name-matcher">GitHub Repo</a>
-        </p>
-      </div>
-    </section>
+      <!-- about me section -->
+      <section id="about">
+        <h2>About Me</h2>
+        <p></p>
+      </section>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>Python, SQL, JavaScript</li>
-        <li>Pandas, Streamlit, Rails</li>
-        <li>Git, GitHub, SQLite</li>
-      </ul>
-    </section>
+      <!-- skills section -->
+      <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+          <li>Python, SQL, JavaScript</li>
+          <li>Pandas, Streamlit, Rails</li>
+          <li>Git, GitHub, SQLite</li>
+        </ul>
+      </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: yourname@email.com</p>
-      <p>
-        <a href="https://github.com/olesiamironenko">GitHub</a>
-      </p>
-      <p>
-        <a href="https://linkedin.com/in/olesia-a-mironenko/">LinkedIn</a>
-      </p>
-    </section>
+      <!-- projects section -->
+      <section id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="project">
+          <h3>Baseball Stats Explorer</h3>
+          <p>
+            An interactive dashboard to explore MLB statistics from 2021–2024
+            using Python, SQL, and Streamlit.
+          </p>
+          <p>
+            <a href="https://github.com/yourusername/baseball-stats"
+              >GitHub Repo</a
+            >
+          </p>
+        </div>
+        <div class="project">
+          <h3>Name Matcher</h3>
+          <p>
+            A fuzzy-matching tool to identify rare name spellings in datasets.
+            Built with pandas and fuzzywuzzy.
+          </p>
+          <p>
+            <a href="https://github.com/yourusername/name-matcher"
+              >GitHub Repo</a
+            >
+          </p>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: yourname@email.com</p>
+        <p>
+          <a href="https://github.com/olesiamironenko">GitHub</a>
+        </p>
+        <p>
+          <a href="https://linkedin.com/in/olesia-a-mironenko/">LinkedIn</a>
+        </p>
+      </section>
+    </main>
 
     <footer>
       <p>© 2025 Olesia Mironenko</p>
