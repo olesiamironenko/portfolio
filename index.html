@@ -274,44 +274,5 @@
       </div>
     </footer>
   
-    <script>
-      const form = document.getElementById('web_form');
-
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const formData = {
-          name: form.name.value,
-          email: form.email.value,
-          subject: form.subject.value,
-          message: form.message.value,
-        };
-
-        const url = "https://script.google.com/macros/s/AKfycbw7aBblx7VEjWQPGhFm_P9DDZnd4zmcuCiOVyY4o1qVqaNZBAtJGGDdkkQ0FnVZOIee/exec";
-
-        try {
-          const response = await fetch(url, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify(formData)
-          });
-
-          const result = await response.json();
-
-          if (result.result === "success") {
-            alert("Form submitted!");
-            form.reset();
-          } else {
-            alert("Unknown server error.");
-          }
-        } catch (error) {
-          console.error("Error submitting form:", error);
-          alert("Network or server error.");
-        }
-      });
-    </script>
-
   </body>
 </html>
