@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Olesia Mironenko | Portfolio</title>
     <!-- icons -->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -211,36 +211,45 @@
       <section id="contact">
         <h2 class="section__title">Contact</h2>
         <div class="contact__container container">
-          <form action="" class="contact__form">
+
+          <!-- form -->
+          <form class="contact__form" id="web_form">
             <div class="contact__content">
+
+              <!-- name -->
               <div class="input_container">
                 <label for="" class="contact__label">Name</label>
-                <input type="text" class="contact__input">
+                <input type="text" class="contact__input" name="name" required>
               </div>
               
+              <!-- email -->
               <div class="input_container">
-                <label for="" class="contact__label">E-mail</label>
-                <input type="email" class="contact__input">
+                <label for="" class="contact__label">Email</label>
+                <input type="email" class="contact__input" name="email" required>
               </div>
             
+              <!-- subject -->
               <div class="input_container">
                 <label for="" class="contact__label">Subject</label>
-                <input type="text" class="contact__input">
+                <input type="text" class="contact__input" name="subject" required>
               </div>
           
+              <!-- message -->
               <div class="input_container">
-                <label for="" class="contact__label">Description</label>
-                <textarea name="" id="" cols="0" rows="7" class="contact__input"></textarea>
+                <label for="" class="contact__label">Message</label>
+                <textarea cols="0" rows="7" class="contact__input" name="message" required></textarea>
               </div>
             </div>
 
-            <div>
-              <a href="#" class="button button--flex">Send message<i class="uil uil-message button__icon"></i>
-              </a>
-            </div>
+            <!-- submit -->
+            <button type="submit" class="button button--flex" id="contactBtn">
+              Send message <i class="uil uil-message button__icon"></i>
+            </button>
           </form>
+
         </div>
       </section>
+    
     </main>
 
     <!-- Footer-->
@@ -264,6 +273,45 @@
         </div>
       </div>
     </footer>
+  
+    <script>
+      const form = document.getElementById('web_form');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const formData = {
+          name: form.name.value,
+          email: form.email.value,
+          subject: form.subject.value,
+          message: form.message.value,
+        };
+
+        const url = "https://script.google.com/macros/s/AKfycbw7aBblx7VEjWQPGhFm_P9DDZnd4zmcuCiOVyY4o1qVqaNZBAtJGGDdkkQ0FnVZOIee/exec";
+
+        try {
+          const response = await fetch(url, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formData)
+          });
+
+          const result = await response.json();
+
+          if (result.result === "success") {
+            alert("Form submitted!");
+            form.reset();
+          } else {
+            alert("Unknown server error.");
+          }
+        } catch (error) {
+          console.error("Error submitting form:", error);
+          alert("Network or server error.");
+        }
+      });
+    </script>
 
   </body>
 </html>
